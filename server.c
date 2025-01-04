@@ -6,7 +6,7 @@
 /*   By: fakoukou <fakoukou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 21:56:33 by fakoukou          #+#    #+#             */
-/*   Updated: 2025/01/03 17:57:58 by fakoukou         ###   ########.fr       */
+/*   Updated: 2025/01/04 16:27:44 by fakoukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	main(void)
 	int	pid;
 
 	pid = getpid();
-	printf("Process ID: %d\n", pid);
-	printf("Waiting for messages...\n");
+	ft_printf("Process ID: %d\n", pid);
+	ft_printf("Waiting for messages...\n");
 	signal(SIGUSR1, function_signal);
 	signal(SIGUSR2, function_signal);
 	while (1)

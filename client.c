@@ -6,7 +6,7 @@
 /*   By: fakoukou <fakoukou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 22:12:44 by fakoukou          #+#    #+#             */
-/*   Updated: 2025/01/03 11:56:51 by fakoukou         ###   ########.fr       */
+/*   Updated: 2025/01/04 16:56:45 by fakoukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ void	send_signal(int pid, char byte)
 		usleep(400);
 		shift--;
 		if (result == -1)
-			exit(write(2, "Error\n", 6));
+		{
+			write(2, "Error\n", 6);
+			exit(1);
+		}
 	}
 }
 
@@ -54,11 +57,6 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	pid = ft_atoi(argv[1]);
-	if (0 <= pid && pid <= 10)
-	{
-		ft_printf("Reserved by the Kernel\n");
-		return (0);
-	}
 	send_message(pid, argv[2]);
 	return (0);
 }
